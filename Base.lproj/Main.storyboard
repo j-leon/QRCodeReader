@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qxe-MT-r81">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0G0-xM-jDT">
+                                <rect key="frame" x="0.0" y="99" width="320" height="469"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please scan the QR Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFQ-iA-S9Y">
+                                <rect key="frame" x="37" y="73" width="247" height="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QFQ-iA-S9Y" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="9" id="4cv-kW-wdy"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0G0-xM-jDT" secondAttribute="bottom" id="6j6-FJ-0kw"/>
+                            <constraint firstItem="QFQ-iA-S9Y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="21" id="HXl-sX-g62"/>
+                            <constraint firstItem="0G0-xM-jDT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="Iz4-Go-Otn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QFQ-iA-S9Y" secondAttribute="trailing" constant="20" id="eHY-bU-NUP"/>
+                            <constraint firstItem="0G0-xM-jDT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="eU4-T0-qlt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0G0-xM-jDT" secondAttribute="trailing" constant="-16" id="uP3-7y-u9s"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="E3f-A3-1Gh"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="viewPreview" destination="0G0-xM-jDT" id="bxx-jI-9aq"/>
+                        <segue destination="JcN-qv-gjx" kind="show" identifier="segueToWebView" id="wOM-Kd-RTF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-80" y="463"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QqO-lY-nCz">
+            <objects>
+                <navigationController id="JcN-qv-gjx" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lXG-ss-Ult">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cZg-Cp-5vc" kind="relationship" relationship="rootViewController" id="WBU-DT-MyJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jvw-8Q-Og3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="299" y="463"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="V4d-CA-3FP">
+            <objects>
+                <viewController id="cZg-Cp-5vc" customClass="WebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yOG-e3-qdR"/>
+                        <viewControllerLayoutGuide type="bottom" id="etE-aF-TgL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4td-Ne-rgd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LHx-tS-YHW">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hcE-4J-2DG">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="rFw-cc-WjV"/>
+                                    <barButtonItem title="Done" id="Qrc-yj-Jve">
+                                        <connections>
+                                            <action selector="BackToScan:" destination="cZg-Cp-5vc" id="BG7-g2-iO6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="sSj-nz-O5U"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="hcE-4J-2DG" secondAttribute="trailing" constant="-16" id="8Cm-kL-wAT"/>
+                            <constraint firstItem="LHx-tS-YHW" firstAttribute="leading" secondItem="4td-Ne-rgd" secondAttribute="leadingMargin" constant="-16" id="TDw-al-Spf"/>
+                            <constraint firstItem="hcE-4J-2DG" firstAttribute="leading" secondItem="4td-Ne-rgd" secondAttribute="leadingMargin" constant="-16" id="dqh-bg-vsf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LHx-tS-YHW" secondAttribute="trailing" constant="-16" id="hU4-Ys-fdg"/>
+                            <constraint firstItem="hcE-4J-2DG" firstAttribute="top" secondItem="yOG-e3-qdR" secondAttribute="bottom" constant="460" id="i0J-pl-tXu"/>
+                            <constraint firstItem="LHx-tS-YHW" firstAttribute="top" secondItem="yOG-e3-qdR" secondAttribute="bottom" constant="-64" id="l4q-4X-bGX"/>
+                            <constraint firstItem="LHx-tS-YHW" firstAttribute="bottom" secondItem="hcE-4J-2DG" secondAttribute="top" id="rqP-XM-jCN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="L9h-Kt-pWK"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="webView" destination="LHx-tS-YHW" id="Ucf-5B-cpN"/>
+                        <segue destination="qxe-MT-r81" kind="show" identifier="segueBackToScan" id="NIj-uE-0uT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pn8-vh-PCr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="687" y="463"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="522-Be-Fr1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qxe-MT-r81" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dol-EI-jIx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wqc-We-wOf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4d0-3X-twm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-445" y="463"/>
+        </scene>
+    </scenes>
+</document>
